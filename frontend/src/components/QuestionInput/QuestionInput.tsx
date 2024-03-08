@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Stack, TextField } from "@fluentui/react";
 import { SendRegular } from "@fluentui/react-icons";
 import Send from "../../assets/Send.svg";
+import Send_png from "../../assets/Send.png";
 import styles from "./QuestionInput.module.css";
 
 interface Props {
@@ -32,7 +33,7 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conv
     };
 
     const onEnterPress = (ev: React.KeyboardEvent<Element>) => {
-        if (ev.key === "Enter" && !ev.shiftKey && !(ev.nativeEvent?.isComposing === true)) {
+        if (ev.key === "Enter" && !ev.shiftKey) {
             ev.preventDefault();
             sendQuestion();
         }
@@ -66,7 +67,7 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conv
                 { sendQuestionDisabled ? 
                     <SendRegular className={styles.questionInputSendButtonDisabled}/>
                     :
-                    <img src={Send} className={styles.questionInputSendButton}/>
+                    <img src={Send_png} className={styles.questionInputSendButton}/>
                 }
             </div>
             <div className={styles.questionInputBottomBorder} />

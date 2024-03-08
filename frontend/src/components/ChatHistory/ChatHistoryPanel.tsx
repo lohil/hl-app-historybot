@@ -21,7 +21,8 @@ const commandBarStyle: ICommandBarStyles = {
         padding: '0',
         display: 'flex',
         justifyContent: 'center',
-        backgroundColor: 'transparent'
+        backgroundColor: 'transparent',
+        color: '#352F91'
     },
 };
 
@@ -36,9 +37,9 @@ export function ChatHistoryPanel(props: ChatHistoryPanelProps) {
 
     const clearAllDialogContentProps = {
         type: DialogType.close,
-        title: !clearingError? 'Are you sure you want to clear all chat history?' : 'Error deleting all of chat history',
-        closeButtonAriaLabel: 'Close',
-        subText: !clearingError ? 'All chat history will be permanently removed.' : 'Please try again. If the problem persists, please contact the site administrator.',
+        title: !clearingError? 'Sollen wirklich alle Chat-Verläufe gelöscht werden?' : 'Fehler beim löschen der Chat-Verläufe.',
+        closeButtonAriaLabel: 'Schließen',
+        subText: !clearingError ? 'Alle Chat-Verläufe werden unwiderruflich gelöscht.' : 'Please try again. If the problem persists, please contact the site administrator.',
     };
     
     const modalProps = {
@@ -49,7 +50,7 @@ export function ChatHistoryPanel(props: ChatHistoryPanelProps) {
     }
 
     const menuItems: IContextualMenuItem[] = [
-        { key: 'clearAll', text: 'Clear all chat history', iconProps: { iconName: 'Delete' }},
+        { key: 'clearAll', text: 'Alle Chat-Verläufe löschen', iconProps: { iconName: 'Delete' }},
     ];
 
     const handleHistoryClick = () => {
@@ -88,18 +89,19 @@ export function ChatHistoryPanel(props: ChatHistoryPanelProps) {
         <section className={styles.container} data-is-scrollable aria-label={"chat history panel"}>
             <Stack horizontal horizontalAlign='space-between' verticalAlign='center' wrap aria-label="chat history header">
                 <StackItem>
-                    <Text role="heading" aria-level={2} style={{ alignSelf: "center", fontWeight: "600", fontSize: "18px", marginRight: "auto", paddingLeft: "20px" }}>Chat history</Text>
+                    <Text role="heading" aria-level={2} style={{ alignSelf: "center", fontWeight: "600", fontSize: "18px", marginRight: "auto", paddingLeft: "20px" }}>Mein Chat-Verlauf</Text>
                 </StackItem>
                 <Stack verticalAlign="start">
                     <Stack horizontal styles={commandBarButtonStyle}>
                         <CommandBarButton
                             iconProps={{ iconName: 'More' }}
-                            title={"Clear all chat history"}
+                            title={"Alle Chat-Verläufe löschen"}
                             onClick={onShowContextualMenu}
                             aria-label={"clear all chat history"}
                             styles={commandBarStyle}
                             role="button"
                             id="moreButton"
+                            color="#352F91"
                         />
                         <ContextualMenu
                             items={menuItems}
@@ -110,11 +112,12 @@ export function ChatHistoryPanel(props: ChatHistoryPanelProps) {
                         />
                         <CommandBarButton
                             iconProps={{ iconName: 'Cancel' }}
-                            title={"Hide"}
+                            title={""}
                             onClick={handleHistoryClick}
                             aria-label={"hide button"}
                             styles={commandBarStyle}
                             role="button"
+                            color="#352F91"
                         />
                     </Stack>
                 </Stack>
@@ -164,7 +167,7 @@ export function ChatHistoryPanel(props: ChatHistoryPanelProps) {
                                 </StackItem>
                                 <StackItem>
                                     <Text style={{ alignSelf: 'center', fontWeight: '400', fontSize: 14 }}>
-                                        <span style={{ whiteSpace: 'pre-wrap' }}>Loading chat history</span>
+                                        <span style={{ whiteSpace: 'pre-wrap' }}>Chat-Verlauf wird geladen.</span>
                                     </Text>
                                 </StackItem>
                             </Stack>

@@ -1,7 +1,7 @@
 .questionInputContainer {
     height: 120px;
     position: absolute;
-    left: 6.5%;
+    left: 2.25%;
     right: 0%;
     top: 0%;
     bottom: 0%;
@@ -44,7 +44,7 @@
     height: 4px;
     left: 0%;
     bottom: 0%;
-    background: radial-gradient(106.04% 106.06% at 100.1% 90.19%,#0F6CBD 33.63%,#8DDDD8 100%);
+    background: rgb(8, 25, 138);
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
@@ -53,11 +53,4 @@
     cursor: pointer;
     width: 27px;
     height: 30px;
-}
-
-
-@media (max-width: 480px) {
-    .questionInputContainer {
-        left: 16.5%;
-    }
 }

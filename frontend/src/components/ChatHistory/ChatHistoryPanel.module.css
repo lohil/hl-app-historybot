@@ -1,6 +1,7 @@
 .container {
     max-height: calc(100vh - 100px);
     width: 300px;
+    
 }
 
 .listContainer {
@@ -25,6 +26,14 @@
     background: #E6E6E6;
 }
 
+.historyButtons {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    color: #352F91;
+}
+
 .itemButton {
     display: flex;
     justify-content: center;
@@ -47,13 +56,6 @@
     width: 100%;
 }
 
-.spinnerContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-}
-
 .chatList {
     width: 100%;
 }
@@ -70,10 +72,4 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-}
-
-@media (max-width: 480px) {
-    .container {
-        width: 100%; 
-    }
 }

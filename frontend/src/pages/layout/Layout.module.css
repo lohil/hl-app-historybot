@@ -23,17 +23,75 @@
 
 .headerTitle {
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 20px;
     line-height: 28px;
     display: flex;
     align-items: flex-end;
-    color: #242424;
+    color: #08198A;
+}
+
+.helpContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 12px;
+    gap: 4px;
+    width: 120px;
+    height: 32px;
+    background: #08198A;
+    border-radius: 4px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    position: absolute;
+    right: 250px;
+    cursor: pointer;
+}
+
+.helpTitle {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 110px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.feedbackContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 12px;
+    gap: 4px;
+    width: 140px;
+    height: 32px;
+    background: #08198A;
+    border-radius: 4px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    position: absolute;
+    right: 380px;
+    cursor: pointer;
+}
+
+.feedbackTitle {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
 }
 
 .headerIcon {
     height: 32px;
-    width: auto;
+    width: 46px;
     margin-left: 36px;
 }
 
@@ -110,14 +168,4 @@
     display: flex;
     align-items: center;
     color: #242424;
-}
-
-@media (max-width: 480px) {
-    .headerTitleContainer {
-        margin-left: 4px;
-    }
-
-    .headerIcon {
-        margin-left: 26px;
-    }
 }
